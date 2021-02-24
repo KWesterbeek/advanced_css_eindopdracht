@@ -1,0 +1,150 @@
+* { margin: 0; padding: 0; font-family: "Open Sans", "Trebuchet MS", arial, verdana, sans-serif;}
+
+@import './constants';
+
+// Layout is Smartphone first
+
+body {
+    background-color: $background-primary;
+}
+
+h2 {    
+    font-variant: small-caps;
+    font-weight: normal;
+}
+
+.testimonial {
+    background-color: $background-testimonial;
+    border-radius: $border-radius;
+    width: 400px;
+    margin: 20px;
+    box-shadow: $shadow;
+    line-height: 2;
+    &__text {
+        color: $textcolor-primary;
+        font-size: 20px;
+        padding: $padding-default;
+        border-radius: $rounded-corners-top;
+        height: 300px;
+    }
+    &__photo {
+        border-radius: 50%;
+        border: 5px solid $background-testimonial;
+        width: 120px;
+        position: absolute;
+        left: 155px;
+        top: 315px;
+    }
+    &__footer {
+        background-color: $background-notable;
+        color: $textcolor-notable;
+        text-align: center;
+        padding: $padding-default;
+        padding-top: 70px;
+        border-radius: $rounded-corners-bottom;
+    }
+    & a{
+        text-decoration: none;
+        color: $textcolor-url;
+        font-size: 18px;
+    }
+}
+
+.gallery {
+    margin-right: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.book {
+    position: relative;
+    margin: 20px;
+    max-width: 700px;
+    border-radius: $border-radius;
+    box-shadow: $shadow;
+    &__image {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: $border-radius;
+    }
+    &__overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: 500ms;
+        background-color: rgb(25, 25, 75);
+        border-radius: $border-radius;
+        &__button {
+            font-size: 12px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    }
+    &:hover &__overlay {
+        opacity: 1;
+    }
+}
+
+.social {
+    position: fixed;
+    bottom: 50px;
+    right: 0px;
+    color: $textcolor-notable;
+    &__blog {
+        background-color: #e17b77;
+        @include button-styling;
+    }
+    &__twitter {
+        @include button-styling;
+        background-color: #00aced;
+    }
+    &__linkedin {
+        @include button-styling;
+        background-color: #007bb6;
+    }
+    &__facebook {
+        @include button-styling;
+        background-color: #3b5998;
+    }
+    &__github {
+        @include button-styling;
+        background-color: #333;
+    }
+    & a {
+        color: $textcolor-notable;
+        padding-left: 20px;
+    }
+}
+
+// Tablets
+@media (min-width: 768px) {
+    .gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+// Desktop
+@media (min-width: 1024px) {
+    .gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+// Widescreen Desktop
+@media (min-width: 1400px) {
+    .gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

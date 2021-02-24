@@ -1,0 +1,25 @@
+$background-primary: #c3cfe2;
+$background-testimonial: #fff;
+$background-notable: #686de0;
+$textcolor-primary: #555;
+$textcolor-notable: #fff;
+$textcolor-url: #C7C9F3;
+$padding-default: 34px;
+$rounded-corners-top: 20px 20px 0px 0px;
+$rounded-corners-bottom: 0px 0px 20px 20px;
+$border-radius: 20px;
+$shadow: 5px 10px 18px #888888;
+
+@mixin button-styling {
+    position: relative;
+    right: -190px;
+    width: 220px;
+    height: 45px;
+    transition: 300ms ease-in-out;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    &:hover {
+        right: 0px;
+    }
+}
